@@ -1,0 +1,70 @@
+// GDIStatusBox.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDIStatusBox.tlb) that will become a resource in
+// GDIStatusBox.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(9A5D4DFF-6F3E-4CF7-9271-48E991BC3A0A), version(1.0),
+  control ]
+library GDIStatusBoxLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDIStatusBoxCtrl
+	[ 
+		uuid(E2D8EAB4-C742-4C2D-80B3-AA2123DE6F8E)	
+	]
+	dispinterface _DGDIStatusBox
+	{
+		properties:
+			[id(1) ] SHORT HasStatusBox;
+			[id(2) ] SHORT TitleFontSize;
+			[id(3) ] OLE_COLOR TitleTextColor;
+			[id(4) ] SHORT TitleDoGradientFill;
+			[id(5) ] BSTR TitleText;
+			[id(6) ] BSTR StatusText;
+			[id(7) ] SHORT StatusTextFontSize;
+			[id(8) ] OLE_COLOR StatusTextColor;
+			[id(9) ] OLE_COLOR StatusTextBackColor;
+			[id(10) ] SHORT StatusBlink;
+			[id(11)] SHORT StatusState;
+			[id(12) ] OLE_COLOR TitleTextBackColor;
+			[id(13) ] ULONG StatusBlinkOnTime;
+			[id(14) ] ULONG StatusBlinkOffTime;
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CGDIStatusBoxCtrl
+
+	[ 
+		uuid(EB91B894-9CA1-4CFA-BF58-7913B96528A0)	
+	]
+	dispinterface _DGDIStatusBoxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(DISPID_CLICK)] void Click(void);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_DBLCLICK)] void DblClick(void);
+			[id(DISPID_KEYPRESS)] void KeyPress(SHORT* KeyAscii);
+	};
+
+	//  Class information for CGDIStatusBoxCtrl
+	[
+		uuid(13947960-120F-4559-AD1B-FED6E457D7AA)
+	]
+	coclass GDIStatusBox
+	{
+		[default] dispinterface _DGDIStatusBox;
+		[default, source] dispinterface _DGDIStatusBoxEvents;
+	};
+
+};

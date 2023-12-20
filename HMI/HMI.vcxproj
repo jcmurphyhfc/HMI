@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8828A808-4444-4CA1-BA0A-ED69B829121F}</ProjectGuid>
+    <RootNamespace>HMI</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>HMIDlg.lib;milim.lib;mil.lib;milblob.lib;milcom.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Debug;LIB;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>HMIDlg.lib;milim.lib;mil.lib;milblob.lib;milcom.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Release;LIB;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="HMI.reg" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\ace.ico" />
+    <None Include="res\ace1.ico" />
+    <None Include="res\AXIS_FAULTS.bmp" />
+    <None Include="res\bin1.ico" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bitmap2.bmp" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\bmp00003.bmp" />
+    <None Include="res\bmp00004.bmp" />
+    <None Include="res\DRIVE_FAULTS.bmp" />
+    <None Include="res\HMI.ico" />
+    <None Include="res\HMI.rc2" />
+    <None Include="res\HMIDoc.ico" />
+    <None Include="res\home1.ico" />
+    <None Include="res\ico00001.ico" />
+    <None Include="res\ico00002.ico" />
+    <None Include="res\ico00003.ico" />
+    <None Include="res\ico00004.ico" />
+    <None Include="res\ico00005.ico" />
+    <None Include="res\ico00006.ico" />
+    <None Include="res\ico00007.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\iopage1.ico" />
+    <None Include="res\live1.ico" />
+    <None Include="res\live_cap.ico" />
+    <None Include="res\mainfram.bmp" />
+    <None Include="res\mil_tool.bmp" />
+    <None Include="res\play1.ico" />
+    <None Include="res\record1.ico" />
+    <None Include="res\servos.bmp" />
+    <None Include="res\servos1.ico" />
+    <None Include="res\show_ove.ico" />
+    <None Include="res\sysbtn.bmp" />
+    <None Include="res\vision1.ico" />
+    <None Include="res\vis_sett.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Alarms.h" />
+    <ClInclude Include="AxisFaultsDlg.h" />
+    <ClInclude Include="Blob.h" />
+    <ClInclude Include="Chat.h" />
+    <ClInclude Include="ChatDlg.h" />
+    <ClInclude Include="ClientEIP.h" />
+    <ClInclude Include="ColorStatic.h" />
+    <ClInclude Include="DisplayUtil.h" />
+    <ClInclude Include="DriveFaults.h" />
+    <ClInclude Include="FaultHistory.h" />
+    <ClInclude Include="gdigagetctrl1.h" />
+    <ClInclude Include="gdiiostatusctrl_slicer.h" />
+    <ClInclude Include="gdiledlightsctrl.h" />
+    <ClInclude Include="gdimotorstatusctrl1.h" />
+    <ClInclude Include="gdimultireadoutctrl1.h" />
+    <ClInclude Include="gdistatusmain.h" />
+    <ClInclude Include="gdi_ButtonXL.h" />
+    <ClInclude Include="GetBackupName.h" />
+    <ClInclude Include="GetName.h" />
+    <ClInclude Include="History.h" />
+    <ClInclude Include="HMI.h" />
+    <ClInclude Include="HMIDoc.h" />
+    <ClInclude Include="HMIView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MilObj.h" />
+    <ClInclude Include="MilWnd.h" />
+    <ClInclude Include="MilWndChild.h" />
+    <ClInclude Include="Pmac.h" />
+    <ClInclude Include="PmacTerminal.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SetTime.h" />
+    <ClInclude Include="slice_count.h" />
+    <ClInclude Include="statusboxex.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="UploadDownload.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Alarms.cpp" />
+    <ClCompile Include="AxisFaultsDlg.cpp" />
+    <ClCompile Include="Blob.cpp" />
+    <ClCompile Include="Chat.cpp" />
+    <ClCompile Include="ChatDlg.cpp" />
+    <ClCompile Include="ColorStatic.cpp" />
+    <ClCompile Include="DisplayUtil.cpp" />
+    <ClCompile Include="DriveFaults.cpp" />
+    <ClCompile Include="FaultHistory.cpp" />
+    <ClCompile Include="gdigagetctrl1.cpp" />
+    <ClCompile Include="gdiiostatusctrl_slicer.cpp" />
+    <ClCompile Include="gdiledlightsctrl.cpp" />
+    <ClCompile Include="gdimotorstatusctrl1.cpp" />
+    <ClCompile Include="gdimultireadoutctrl1.cpp" />
+    <ClCompile Include="gdistatusmain.cpp" />
+    <ClCompile Include="gdi_ButtonXL.cpp" />
+    <ClCompile Include="GetBackupName.cpp" />
+    <ClCompile Include="GetName.cpp" />
+    <ClCompile Include="History.cpp" />
+    <ClCompile Include="HMI.cpp" />
+    <ClCompile Include="HMIDoc.cpp" />
+    <ClCompile Include="HMIView.cpp" />
+    <ClCompile Include="HookFunctions.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MilObj.cpp" />
+    <ClCompile Include="MilWnd.cpp" />
+    <ClCompile Include="MilWndChild.cpp" />
+    <ClCompile Include="Pmac.cpp" />
+    <ClCompile Include="PmacTerminal.cpp" />
+    <ClCompile Include="SetTime.cpp" />
+    <ClCompile Include="slice_count.cpp" />
+    <ClCompile Include="statusboxex.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UploadDownload.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HMI.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="HMI.rc" _x007B_13947960-120F-4559-AD1B-FED6E457D7AA_x007D_="CStatusbox_main" _x007B_7F078F87-2F90-4A93-A093-A519F6C545DC_x007D_="CGdi_ButtonXL" _x007B_FCCCBA48-BCBF-42F9-9DA4-073202AF82E8_x007D_="CGDITedit" _x007B_2BABD821-FC2F-4E9F-AE2E-20D53C2EA752_x007D_="CGdigagetctrl1" _x007B_FA59A8CA-FAC8-4A3A-9CCF-1CC219C84072_x007D_="CGdimotorstatusctrl1" _x007B_CF5F3DF3-3E8E-435A-99F3-58E3680807BF_x007D_="CGdiiostatusctrl" _x007B_292C0FD4-F89F-4003-B4AB-9531DEFC2B3B_x007D_="CGdiledlightsctrl" _x007B_9F01B6E1-2CA6-470B-8270-F13E8CECE68F_x007D_="CGdimultireadoutctrl1" _x007B_A548D2EE-1040-487E-9459-650DEAC4EF42_x007D_="CStatusboxex" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

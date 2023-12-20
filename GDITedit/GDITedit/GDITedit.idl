@@ -1,0 +1,72 @@
+// GDITedit.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDITedit.tlb) that will become a resource in
+// GDITedit.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(9EE38F38-8436-4106-A0C0-4A4A006F3C87), version(1.0),
+  control ]
+library GDITeditLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDITeditCtrl
+	[ 
+		uuid(1B573CE3-605E-4247-B70C-855FBD55734D)	
+	]
+	dispinterface _DGDITedit
+	{
+		properties:
+			[id(1) ] SHORT TitleFontSize;
+			[id(2) ] OLE_COLOR TitleTextColor;
+			[id(3) ] OLE_COLOR TitleBackColor;
+			[id(4) ] BSTR TitleText;
+			[id(5) ] SHORT TextFontSize;
+			[id(6) ] OLE_COLOR TextColor;
+			[id(7) ] OLE_COLOR TextBackColor;
+			[id(8) ] SHORT TitleDoGradientFill;
+			[id(11) ] DOUBLE MinValue;
+			[id(12) ] DOUBLE MaxValue;
+			[id(13) ] SHORT Width;
+			[id(14) ] SHORT Precision;
+			[id(15) ] BSTR Units;
+			[id(16) ] SHORT HasTitle;
+			[id(17) ] SHORT EditEnable;
+
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(9)] DOUBLE GetValue(void);
+			[id(10)] void SetValue(DOUBLE dbValue);
+	};
+
+	//  Event dispatch interface for CGDITeditCtrl
+
+	[ 
+		uuid(42250EBE-0117-4674-9E05-75007A0915B5)	
+	]
+	dispinterface _DGDITeditEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(DISPID_CLICK)] void Click(void);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+	};
+
+	//  Class information for CGDITeditCtrl
+	[
+		uuid(FCCCBA48-BCBF-42F9-9DA4-073202AF82E8)
+	]
+	coclass GDITedit
+	{
+		[default] dispinterface _DGDITedit;
+		[default, source] dispinterface _DGDITeditEvents;
+	};
+
+};

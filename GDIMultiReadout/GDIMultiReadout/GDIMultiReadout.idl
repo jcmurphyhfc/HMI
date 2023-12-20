@@ -1,0 +1,99 @@
+// GDIMultiReadout.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDIMultiReadout.tlb) that will become a resource in
+// GDIMultiReadout.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(1E102107-C7AB-4086-B2CB-FDC777B7E74F), version(1.0),
+  control ]
+library GDIMultiReadoutLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDIMultiReadoutCtrl
+	[ 
+		uuid(BB7CA3F9-2539-4504-B491-7A6048C90645)	
+	]
+	dispinterface _DGDIMultiReadout
+	{
+		properties:
+			[id(9) ] OLE_COLOR TextColor;
+			[id(10) ] OLE_COLOR TextBackColor;
+			[id(11) ] SHORT TitleFontSize;
+			[id(12) ] OLE_COLOR TitleTextColor;
+			[id(13) ] OLE_COLOR TitleBackColor;
+			[id(14) ] SHORT TitleDoGradientFill;
+			[id(15) ] SHORT HasTitle;
+			[id(16) ] BSTR TitleText0;
+			[id(17) ] BSTR TitleText1;
+			[id(18) ] BSTR TitleText2;
+			[id(19) ] BSTR TitleText3;
+			[id(20) ] BSTR TitleText4;
+			[id(21) ] BSTR TitleText5;
+			[id(22) ] BSTR TitleText6;
+			[id(23) ] DOUBLE dbValue0;
+			[id(24) ] DOUBLE dbValue1;
+			[id(25) ] DOUBLE dbValue2;
+			[id(26) ] DOUBLE dbValue3;
+			[id(27) ] DOUBLE dbValue4;
+			[id(28) ] DOUBLE dbValue5;
+			[id(29) ] SHORT TextFontSize0;
+			[id(30) ] SHORT TextFontSize1;
+			[id(31) ] SHORT TextFontSize2;
+			[id(32) ] SHORT TextFontSize3;
+			[id(33) ] SHORT TextFontSize4;
+			[id(34) ] SHORT TextFontSize5;
+			[id(35) ] SHORT Width0;
+			[id(36) ] SHORT Width1;
+			[id(37) ] SHORT Width2;
+			[id(38) ] SHORT Width3;
+			[id(39) ] SHORT Width4;
+			[id(40) ] SHORT Width5;
+			[id(41) ] SHORT Precision0;
+			[id(42) ] SHORT Precision1;
+			[id(43) ] SHORT Precision2;
+			[id(44) ] SHORT Precision3;
+			[id(45) ] SHORT Precision4;
+			[id(46) ] SHORT Precision5;
+			[id(47) ] SHORT TitleHeight;
+
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] void SetValue(DOUBLE Value);
+			[id(2)] DOUBLE GetValue(void);
+			[id(3)] void SetPaneNum(DOUBLE PaneNum);
+			[id(4)] DOUBLE GetPaneNum(void);
+			[id(5)] void SetTotalPanes(SHORT TotalPanes);
+			[id(6)] void UpdateReadouts(void);
+			[id(7)] SHORT MultiFunc0(SHORT Param);
+			[id(8)] DOUBLE MultiFunc1(DOUBLE Param);
+	};
+
+	//  Event dispatch interface for CGDIMultiReadoutCtrl
+
+	[ 
+		uuid(27E66378-B0F9-43D7-B22F-F0BA8366D753)	
+	]
+	dispinterface _DGDIMultiReadoutEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CGDIMultiReadoutCtrl
+	[
+		uuid(9F01B6E1-2CA6-470B-8270-F13E8CECE68F)
+	]
+	coclass GDIMultiReadout
+	{
+		[default] dispinterface _DGDIMultiReadout;
+		[default, source] dispinterface _DGDIMultiReadoutEvents;
+	};
+
+};

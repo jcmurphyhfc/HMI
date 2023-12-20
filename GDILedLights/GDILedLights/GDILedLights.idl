@@ -1,0 +1,54 @@
+// GDILedLights.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDILedLights.tlb) that will become a resource in
+// GDILedLights.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(07237C2F-E7AB-441E-834E-D7FD76319622), version(1.0),
+  control ]
+library GDILedLightsLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDILedLightsCtrl
+	[ 
+		uuid(0DFCD43C-3A3B-4D7C-9012-458F883058A9)	
+	]
+	dispinterface _DGDILedLights
+	{
+		properties:
+			[id(1) ] SHORT LedColorSelect;
+			[id(2) ] SHORT TotalIoPoints;
+			[id(3) ] LONG IoStatusWord;
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CGDILedLightsCtrl
+
+	[ 
+		uuid(BFEDD14E-53A6-460D-85B3-7CAC0D55745A)	
+	]
+	dispinterface _DGDILedLightsEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CGDILedLightsCtrl
+	[
+		uuid(292C0FD4-F89F-4003-B4AB-9531DEFC2B3B)
+	]
+	coclass GDILedLights
+	{
+		[default] dispinterface _DGDILedLights;
+		[default, source] dispinterface _DGDILedLightsEvents;
+	};
+
+};

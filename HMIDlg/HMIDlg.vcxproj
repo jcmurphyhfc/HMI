@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBF80B02-9AE9-4E2A-ABBE-483D801CD3DB}</ProjectGuid>
+    <RootNamespace>HMIDlg</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>.\HMIDlg.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\HMIDlg.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="bitmap1.bmp" />
+    <None Include="bmp00001.bmp" />
+    <None Include="HMIDlg.def" />
+    <None Include="icon1.ico" />
+    <None Include="no1.bmp" />
+    <None Include="ok1.bmp" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\bmp00003.bmp" />
+    <None Include="res\bmp00004.bmp" />
+    <None Include="res\bmp00005.bmp" />
+    <None Include="res\bmp00006.bmp" />
+    <None Include="res\bmp00007.bmp" />
+    <None Include="res\bmp00008.bmp" />
+    <None Include="res\btc_sett.ico" />
+    <None Include="res\clockface.bmp" />
+    <None Include="res\clock_fa.bmp" />
+    <None Include="res\color1.ico" />
+    <None Include="res\HMIDlg.rc2" />
+    <None Include="res\ico00001.ico" />
+    <None Include="res\ico00002.ico" />
+    <None Include="res\ico00003.ico" />
+    <None Include="res\ico00004.ico" />
+    <None Include="res\ico00005.ico" />
+    <None Include="res\ico00006.ico" />
+    <None Include="res\ico00007.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\icon_blo.ico" />
+    <None Include="res\icon_no1.ico" />
+    <None Include="res\icon_tim.ico" />
+    <None Include="res\icon_yes.ico" />
+    <None Include="res\laser1.ico" />
+    <None Include="res\motion_d.ico" />
+    <None Include="res\motion_s.ico" />
+    <None Include="res\ok.bmp" />
+    <None Include="res\ok1.ico" />
+    <None Include="res\slicer1.ico" />
+    <None Include="res\sorting1.ico" />
+    <None Include="res\splash.bmp" />
+    <None Include="res\split1.ico" />
+    <None Include="res\top1.ico" />
+    <None Include="res\two_tier.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AlignLUT.cpp" />
+    <ClCompile Include="DlgHMIOpt.cpp" />
+    <ClCompile Include="DlgOk.cpp" />
+    <ClCompile Include="DlgWait.cpp" />
+    <ClCompile Include="HMIDlg.cpp" />
+    <ClCompile Include="HMIDlgApi.cpp" />
+    <ClCompile Include="IsiLcdLib\COLOR.CPP" />
+    <ClCompile Include="IsiLcdLib\GdiBorder.cpp" />
+    <ClCompile Include="IsiLcdLib\IsiCompBase.cpp" />
+    <ClCompile Include="IsiLcdLib\IsiLcdDisplay.cpp" />
+    <ClCompile Include="KeyPadDlg.cpp" />
+    <ClCompile Include="MotionSettings.cpp" />
+    <ClCompile Include="MotionSettings1.cpp" />
+    <ClCompile Include="MotionSettings2.cpp" />
+    <ClCompile Include="MotionSettings4.cpp" />
+    <ClCompile Include="MotionSettings5.cpp" />
+    <ClCompile Include="NumSpinCtrl.cpp" />
+    <ClCompile Include="PmacSettings.cpp" />
+    <ClCompile Include="Save.cpp" />
+    <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="Splash.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TEdit.cpp" />
+    <ClCompile Include="TrimLUT.cpp" />
+    <ClCompile Include="UserPage1.cpp" />
+    <ClCompile Include="UserPage2.cpp" />
+    <ClCompile Include="UserPage3.cpp" />
+    <ClCompile Include="UserSettings.cpp" />
+    <ClCompile Include="VisionSettings.cpp" />
+    <ClCompile Include="VisionSplit.cpp" />
+    <ClCompile Include="VisSetDelay.cpp" />
+    <ClCompile Include="YesNo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AlignLUT.h" />
+    <ClInclude Include="DlgHMIOpt.h" />
+    <ClInclude Include="DlgOk.h" />
+    <ClInclude Include="DlgWait.h" />
+    <ClInclude Include="HMIDlg.h" />
+    <ClInclude Include="HMIDlgApi.h" />
+    <ClInclude Include="IsiLcdLib\COLOR.H" />
+    <ClInclude Include="IsiLcdLib\GdiBorder.h" />
+    <ClInclude Include="IsiLcdLib\GdiPlusWnd.h" />
+    <ClInclude Include="IsiLcdLib\IsiCompBase.h" />
+    <ClInclude Include="IsiLcdLib\IsiLcdDisplay.h" />
+    <ClInclude Include="IsiLcdLib\MemDC.h" />
+    <ClInclude Include="IsiLcdLib\RoundRect.h" />
+    <ClInclude Include="KeyPadDlg.h" />
+    <ClInclude Include="MotionSettings.h" />
+    <ClInclude Include="MotionSettings1.h" />
+    <ClInclude Include="MotionSettings2.h" />
+    <ClInclude Include="MotionSettings4.h" />
+    <ClInclude Include="MotionSettings5.h" />
+    <ClInclude Include="NumSpinCtrl.h" />
+    <ClInclude Include="PmacSettings.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Save.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="Splash.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TEdit.h" />
+    <ClInclude Include="TrimLUT.h" />
+    <ClInclude Include="UserPage1.h" />
+    <ClInclude Include="UserPage2.h" />
+    <ClInclude Include="UserPage3.h" />
+    <ClInclude Include="UserSettings.h" />
+    <ClInclude Include="VisionSettings.h" />
+    <ClInclude Include="VisionSplit.h" />
+    <ClInclude Include="VisSetDelay.h" />
+    <ClInclude Include="YesNo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HMIDlg.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="HMIDlg.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

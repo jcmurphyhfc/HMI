@@ -1,0 +1,57 @@
+// EIPGadget.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (EIPGadget.tlb) that will become a resource in
+// EIPGadget.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(DB417AA8-990A-458A-8A58-3476E86716BD), version(1.0),
+  control ]
+library EIPGadgetLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CEIPGadgetCtrl
+	[ 
+		uuid(F0C901EA-E990-41C4-8F3C-7BDB18919899)	
+	]
+	dispinterface _DEIPGadget
+	{
+		properties:
+			[id(1) ] SHORT DoGradientFill;
+			[id(2) ] BSTR Title;
+			[id(3) ] SHORT TitleFontSize;
+			[id(4) ] OLE_COLOR TitleBackgroundColor;
+			[id(5) ] OLE_COLOR TitleTextColor;
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(6)] SHORT OpenCom(BSTR IpAddr);
+	};
+
+	//  Event dispatch interface for CEIPGadgetCtrl
+
+	[ 
+		uuid(20C79ABD-247E-4F57-BF3C-9CB9CBBE6779)	
+	]
+	dispinterface _DEIPGadgetEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CEIPGadgetCtrl
+	[
+		uuid(F5260866-E6BB-4A2D-A2D9-336B96C6EF1B)
+	]
+	coclass EIPGadget
+	{
+		[default] dispinterface _DEIPGadget;
+		[default, source] dispinterface _DEIPGadgetEvents;
+	};
+
+};

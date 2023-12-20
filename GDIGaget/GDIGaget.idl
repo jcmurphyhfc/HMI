@@ -1,0 +1,64 @@
+// GDIGaget.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDIGaget.tlb) that will become a resource in
+// GDIGaget.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(E8F7FD82-FD29-4B6A-A6C4-A78A0F1AF748), version(1.0),
+  control ]
+library GDIGagetLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDIGagetCtrl
+	[ 
+		uuid(2795B9DA-41A4-496A-A64C-70C3052FA295)	
+	]
+	dispinterface _DGDIGaget
+	{
+		properties:
+			[id(1) ] SHORT TitleFontSize;
+			[id(4) ] SHORT DoGradientFill;
+			[id(5) ] OLE_COLOR TitleTextBackColor;
+			[id(6) ] OLE_COLOR TitleTextColor;
+			[id(7) ] BSTR Title;
+			[id(8) ] OLE_COLOR TickBackColor;
+			[id(9) ] OLE_COLOR TickColor;
+			[id(10) ] SHORT TickFontSize;
+			[id(11) ] SHORT TickOffset;
+			[id(12) ] SHORT TickCount;
+			[id(13) ] BSTR TickUnits;
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(2)] void SetPos(LONG Pos);
+			[id(3)] void SetRange(LONG Lower, LONG Upper);
+	};
+
+	//  Event dispatch interface for CGDIGagetCtrl
+
+	[ 
+		uuid(75D53DB2-B40E-472E-941E-D04B6AF887EA)	
+	]
+	dispinterface _DGDIGagetEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CGDIGagetCtrl
+	[
+		uuid(2BABD821-FC2F-4E9F-AE2E-20D53C2EA752)
+	]
+	coclass GDIGaget
+	{
+		[default] dispinterface _DGDIGaget;
+		[default, source] dispinterface _DGDIGagetEvents;
+	};
+
+};

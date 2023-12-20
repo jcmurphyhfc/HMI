@@ -1,0 +1,21 @@
+; HMIDlg.def : Declares the module parameters for the DLL.
+
+LIBRARY
+
+EXPORTS
+    ; Explicit exports can go here
+    YesNoDlg              @2
+	CreateIsLCDWnd        @3
+	LoadAppSettingFile    @4 
+	SaveAppSettingFile    @5
+	OkDlg                 @6
+	GetHMIOptDlg          @7
+	LoadAppCounterFile    @8
+	SaveAppCounterFile    @9
+    GetNumDlg	          @10
+	DlgSettings           @11
+	DlgWait               @12
+	DoSplash              @13
+	DlgMotionSettings     @14
+	DlgUserSettings       @15
+	LoadMasterAppSettingFile @16 

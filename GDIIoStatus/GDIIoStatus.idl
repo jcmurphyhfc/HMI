@@ -1,0 +1,76 @@
+// GDIIoStatus.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDIIoStatus.tlb) that will become a resource in
+// GDIIoStatus.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(DBCEDFF5-ECA9-4CD1-A4A0-5547F36F8CAA), version(1.0),
+  control ]
+library GDIIoStatusLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDIIoStatusCtrl
+	[ 
+		uuid(3CFCA2D7-1644-46D7-870D-8624073A2480)	
+	]
+	dispinterface _DGDIIoStatus
+	{
+		properties:
+			[id(1) ] SHORT HasStatusBox;
+			[id(2) ] SHORT TitleFontSize;
+			[id(3) ] OLE_COLOR TitleTextColor;
+			[id(4) ] SHORT TitleDoGradientFill;
+			[id(5) ] BSTR TitleText;
+			[id(6) ] BSTR IOStatusText;
+			[id(7) ] SHORT IOStatusTextFontSize;
+			[id(8) ] OLE_COLOR IOStatusTextColor;
+			[id(9) ] OLE_COLOR IOStatusTextBackColor;
+			[id(10) ] SHORT IOStatusInvert;
+			[id(11)] SHORT IOStatusBit;
+			[id(12) ] OLE_COLOR TitleTextBackColor;
+			[id(13) ] SHORT TotalIoPoints;
+			[id(14) ] SHORT IoNameWidth;
+			[id(15) ] SHORT LedColorSelect;
+			[id(16) ] ULONG IoStatusWord;
+			[id(17) ] SHORT IoForceEnable;
+			[id(18) ] ULONG IoStatusWordInvert;
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CGDIIoStatusCtrl
+
+	[ 
+		uuid(7ABC9D79-1EF0-4BC7-9E4A-6DEAF096B840)	
+	]
+	dispinterface _DGDIIoStatusEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(DISPID_CLICK)] void Click(void);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_DBLCLICK)] void DblClick(void);
+			[id(DISPID_KEYPRESS)] void KeyPress(SHORT* KeyAscii);
+
+			[id(1)] void IoClicked(SHORT IoClickedNum);
+	};
+
+	//  Class information for CGDIIoStatusCtrl
+	[
+		uuid(CF5F3DF3-3E8E-435A-99F3-58E3680807BF)
+	]
+	coclass GDIIoStatus
+	{
+		[default] dispinterface _DGDIIoStatus;
+		[default, source] dispinterface _DGDIIoStatusEvents;
+	};
+
+};

@@ -1,0 +1,72 @@
+// GDIMotorStatus.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDIMotorStatus.tlb) that will become a resource in
+// GDIMotorStatus.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(8F88BE82-B38D-46D0-8C56-7E392C3CACC5), version(1.0),
+  control ]
+library GDIMotorStatusLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDIMotorStatusCtrl
+	[ 
+		uuid(7A6E2211-0E84-4774-B8DF-2CDE779C7EC7)	
+	]
+	dispinterface _DGDIMotorStatus
+	{
+		properties:
+			[id(1) ] SHORT TitleFontSize;
+			[id(2) ] SHORT DoGradientFill;
+			[id(3) ] SHORT HasClientBox;
+			[id(4) ] OLE_COLOR TitleTextBackColor;
+			[id(5) ] OLE_COLOR TitleTextColor;
+			[id(6) ] BSTR strTitle;
+			[id(7) ] SHORT MotorFontSize;
+			[id(8) ] SHORT MotorState;
+			[id(9) ] SHORT TotalMotors;
+			[id(10) ] SHORT HasTitle;
+			[id(11) ] OLE_COLOR MotorTextColor;
+			[id(12) ] BSTR MotorName;
+			[id(13) ] SHORT MotorSelect;
+			[id(14) ] SHORT MotorNameWidth;
+			[id(15) ] SHORT MotorStateFontSize;
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(16)] void SetMotorState(SHORT MotorNum, SHORT State);
+			[id(17)] void UpdateMotorStatus(SHORT Repaint);
+			[id(18)] SHORT GetMotorState(SHORT MotorNum);
+	};
+
+	//  Event dispatch interface for CGDIMotorStatusCtrl
+
+	[ 
+		uuid(BAFD3B1F-3D5B-450B-9AF9-53FC76CD7D5B)	
+	]
+	dispinterface _DGDIMotorStatusEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(DISPID_CLICK)] void Click(void);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+	};
+
+	//  Class information for CGDIMotorStatusCtrl
+	[
+		uuid(FA59A8CA-FAC8-4A3A-9CCF-1CC219C84072)
+	]
+	coclass GDIMotorStatus
+	{
+		[default] dispinterface _DGDIMotorStatus;
+		[default, source] dispinterface _DGDIMotorStatusEvents;
+	};
+
+};

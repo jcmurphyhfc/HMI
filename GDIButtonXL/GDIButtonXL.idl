@@ -1,0 +1,64 @@
+// GDIButtonXL.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (GDIButtonXL.tlb) that will become a resource in
+// GDIButtonXL.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(091D9AAC-DAED-4C28-960A-446B858E7D2A), version(1.0),
+  control ]
+library GDIButtonXLLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CGDIButtonXLCtrl
+	[ 
+		uuid(B28DFE52-8499-4AD4-AE4C-DF4FC292ABB8)	
+	]
+	dispinterface _DGDIButtonXL
+	{
+		properties:
+			[id(2) ] LONG BitMapSelect;
+			[id(3) ] LONG FontSize;
+			[id(4) ] OLE_COLOR TextColor;
+			[id(5) ] VARIANT_BOOL LightOn;
+			[id(6) ] LONG TextOffset1;
+			[id(7) ] LONG TextOffset2;
+			[id(8) ] BSTR TitleText1;
+			[id(9) ] BSTR TitleText2;
+
+	methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] void SetLight(VARIANT_BOOL Light);
+	};
+
+	//  Event dispatch interface for CGDIButtonXLCtrl
+
+	[ 
+		uuid(408FF230-3234-46D8-AEC6-288CB7B74337)	
+	]
+	dispinterface _DGDIButtonXLEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(DISPID_CLICK)] void Click(void);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(SHORT Button, SHORT Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+	};
+
+	//  Class information for CGDIButtonXLCtrl
+	[
+		uuid(7F078F87-2F90-4A93-A093-A519F6C545DC)
+	]
+	coclass GDIButtonXL
+	{
+		[default] dispinterface _DGDIButtonXL;
+		[default, source] dispinterface _DGDIButtonXLEvents;
+	};
+
+};
